@@ -17,3 +17,8 @@ output "thumbprint" {
   description = "TLS endpoint certificate SHA1 Fingerprint"
   value       = data.tls_certificate.gitlab.certificates[0].sha1_fingerprint
 }
+
+output "iam_role_arn" {
+  description = "IAM role ARN."
+  value       = try(aws_iam_role.this[0].arn, "")
+}
