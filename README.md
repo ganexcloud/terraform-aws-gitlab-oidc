@@ -55,6 +55,7 @@ No modules.
 
 | Name | Description |
 |------|-------------|
+| <a name="output_iam_role_arn"></a> [iam\_role\_arn](#output\_iam\_role\_arn) | IAM role ARN. |
 | <a name="output_oidc_provider_arn"></a> [oidc\_provider\_arn](#output\_oidc\_provider\_arn) | OIDC provider ARN |
 | <a name="output_oidc_provider_url"></a> [oidc\_provider\_url](#output\_oidc\_provider\_url) | OIDC provider URL |
 | <a name="output_oidc_role"></a> [oidc\_role](#output\_oidc\_role) | IAM role. |
