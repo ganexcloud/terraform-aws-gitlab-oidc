@@ -1,3 +1,7 @@
+## Compatibility
+
+This module requires Terraform 0.13.1 or later. Older Terraform versions are not supported.
+
 <!-- BEGIN_TF_DOCS -->
 # AWS Gitlab OIDC Provider Terraform Module
 
@@ -16,7 +20,7 @@ This module allows you to create a Gitlab OIDC provider for your AWS account, th
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 3.63 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 6.58.0 |
 | <a name="provider_tls"></a> [tls](#provider\_tls) | 4.0.4 |
 
 ## Modules
@@ -37,7 +41,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_aud_value"></a> [aud\_value](#input\_aud\_value) | (Required) A list of client IDs (also known as audiences). When a mobile or web app registers with an OpenID Connect provider, they establish a value that identifies the application. (This is the value that's sent as the client\_id parameter on OAuth requests.) | `list(string)` | <pre>[<br>  "https://gitlab.com"<br>]</pre> | no |
+| <a name="input_aud_value"></a> [aud\_value](#input\_aud\_value) | (Required) A list of client IDs (also known as audiences). When a mobile or web app registers with an OpenID Connect provider, they establish a value that identifies the application. (This is the value that's sent as the client\_id parameter on OAuth requests.) | `list(string)` | <pre>[<br/>  "https://gitlab.com"<br/>]</pre> | no |
 | <a name="input_create_oidc_provider"></a> [create\_oidc\_provider](#input\_create\_oidc\_provider) | Whether or not to create the associated oidc provider. If false, variable 'oidc\_provider\_arn' is required | `bool` | `true` | no |
 | <a name="input_create_oidc_role"></a> [create\_oidc\_role](#input\_create\_oidc\_role) | Whether or not to create the OIDC attached role | `bool` | `true` | no |
 | <a name="input_max_session_duration"></a> [max\_session\_duration](#input\_max\_session\_duration) | Maximum session duration in seconds. | `number` | `3600` | no |

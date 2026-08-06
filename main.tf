@@ -18,7 +18,7 @@ resource "aws_iam_role" "this" {
   name                 = var.role_name
   description          = var.role_description
   max_session_duration = var.max_session_duration
-  assume_role_policy   = join("", data.aws_iam_policy_document.this.*.json)
+  assume_role_policy   = data.aws_iam_policy_document.this.json
   tags                 = var.tags
   depends_on           = [aws_iam_openid_connect_provider.this]
 }
@@ -26,6 +26,6 @@ resource "aws_iam_role" "this" {
 resource "aws_iam_role_policy_attachment" "this" {
   count      = var.create_oidc_role ? length(var.oidc_role_attach_policies) : 0
   policy_arn = var.oidc_role_attach_policies[count.index]
-  role       = join("", aws_iam_role.this.*.name)
+  role       = aws_iam_role.this[0].name
   depends_on = [aws_iam_role.this]
 }
